@@ -1,0 +1,5 @@
+1. The add_head, remove_head, and add_tail methods, as well as the magic methods, are all similar to the Singly Linked Class. 
+  The add and remove methods require minor tweaks to work with going backwards.
+2. When removing a head, you would need to remove the prev attribute from the old head. And when adding new, you need to add a prev attribute.
+  Adding a prev attribute in this case would mean replacing the None with the value of the previous node.
+3. The ability to go backwards through the list makes it more versatile. 
