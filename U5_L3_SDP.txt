@@ -1,0 +1,2 @@
+1. The base case is when the length of the initial list is 0, otherwise continue recursion.
+2. The reversal function doesn't need to return anything. It can build the reversed list from the existing empty list.

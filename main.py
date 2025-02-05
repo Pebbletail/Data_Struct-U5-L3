@@ -1,59 +1,51 @@
-# Implementation & testing of the DoublyLinkedList class
+#Luke Brudnok
+#2/5/25
 
 from DLLClass import DoublyLinkedList
-from TEST_CODE import *
-import os
+from SLLClass import SinglyLinkedList
 
-'''
-Testing details can be found in TEST_CODE.py
+def create_DLL():
+    linkedList = DoublyLinkedList()
+    values = ["A", "B", "C", "D"]
+    for val in values:
+        linkedList.tail_insert(val)
+    
+    return linkedList
 
-ENSURE ALL TESTS PASS BEFORE SUBMITTING
+def create_SLL():
+    linkedList = SinglyLinkedList()
+    values = ["A", "B", "C", "D"]
+    for val in values:
+        linkedList.tail_insert(val)
+    
+    return linkedList
 
-IF COLORAMA NOT FOUND - ENTER INTO TERMINAL:
-pip install colorama
-'''
+def reverse_LL(linkedList):
+    if len(linkedList) == 0:
+        return
+    else:
+        node = linkedList.head_remove()
+        reverse_LL(linkedList)
+
+        linkedList.tail_insert(node)
+
+    return linkedList
+
+
+
 
 def main():
+    singlyLinked = create_SLL()
+    print(f" initial singly linked: {singlyLinked}")
+    reversedSL = reverse_LL(singlyLinked)
 
-    testDLL = DoublyLinkedList()
+    print(f" reversed singly linked: {reversedSL}\n\n")
 
-    # TEST 1 - Test DLL creation
-    # BEFORE TESTING: implement DoublyLinkedList __init__
-    TEST_new_dll(testDLL)
+    doublyLinked = create_DLL()
+    print(f" initial doubly linked: {doublyLinked}")
+    reversedDL = reverse_LL(doublyLinked)
 
-    # TEST 2 - Test DoublyNode
-    # BEFORE TESTING: implement DoublyNode class
-    TEST_doubly_node(DoublyLinkedList)
-
-    # TEST 3 - Test DLL head_insert
-    # BEFORE TESTING: implement DoublyLinkedList head_insert, __str__, __len__, __is_empty
-    TEST_head_insert(testDLL, DoublyLinkedList)
-
-    # TEST 4 - Test DLL head_remove
-    # BEFORE TESTING: implement DoublyLinkedList head_remove
-    TEST_head_remove(testDLL)
-
-    # TEST 5 - Test DLL tail_insert
-    # BEFORE TESTING: implement DoublyLinkedList tail_insert
-    TEST_tail_insert(testDLL, DoublyLinkedList)
-
-    # TEST 6 - Test DLL tail_remove
-    # BEFORE TESTING: implement DoublyLinkedList tail_remove
-    TEST_tail_remove(testDLL)
-
-    # TEST 7 - Test DLL head_insert & tail_insert
-    # BEFORE TESTING: implement DoublyLinkedList head_insert & tail_insert
-    TEST_insert_methods(testDLL, DoublyLinkedList)
-
-    # TEST 8 - Test DLL head_remove & tail_remove
-    # BEFORE TESTING: implement DoublyLinkedList head_remove & tail_remove
-    TEST_remove_methods(testDLL)
-
-    # TEST 9 - Test docstrings
-    # BEFORE TESTING: implement all methods & docstrings
-    TEST_docs(testDLL, DoublyLinkedList)
-
+    print(f" reversed doubly linked: {reversedDL}")
 
 if __name__ == "__main__":
-    os.system("clear")
     main()
