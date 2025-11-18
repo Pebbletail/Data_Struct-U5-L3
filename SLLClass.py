@@ -1,4 +1,4 @@
-#Luke Brudnok
+#Brook Brudnok
 #1/27/25
 
 class SinglyLinkedList:
