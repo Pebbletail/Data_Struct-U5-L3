@@ -1,4 +1,4 @@
-#Luke Brudnok
+#Brook Brudnok
 #2/4/25
 
 class DoublyLinkedList:
